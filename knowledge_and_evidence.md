@@ -93,7 +93,7 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![Screenshot 1](assessmentscreenshots/screenshot1.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -108,47 +108,51 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | Type                    | name  | value         |
+   | ----------              |-------|---------------|
+   | built-in primitive type | Int   | 255           |
+   | built-in composite type | Tuple | (255,255,255) |
+   | user-defined type       | Class | Smiley        |
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type   |
+   | ------------             |--------|
+   | self.pixels              | list   |
+   | A member of self.pixels  | tuple  |
+   | self                     | Smiley |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow | File      | First line | Line range |
+   | ------------ |-----------|-----|------------|
+   |  sequence    | smiley.py |  def __init__(self):    | 15-26      |
+   |  selection   | sad.py    | def draw_eyes(self, wide_open=True):    | 24-30      |
+   |  iteration   | happy.py  | def draw_mouth(self):    | 20-22      |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | Type                    | Used?     | Example                                                                         |
+   | ----------------------- |-----------|---------------------------------------------------------------------------------|
+   | int                     | smiley.py | WHITE = (255,255,255) (line 5) *The 255 in the WHITE variable are the integers. |
+   | float                   | happy.py  | delay = 0.25 (line 33)                                                          |
+   | str                     | Not Used  | mystr = "Hello World"                                                            |
+   | bool                    | sad.py    | wide_open = True (line 19)                                                      |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
->
+> In the smiley.py file, an example of a class variable is the RGB values like WHITE, RED, GREEN, etc. An example of a
+> instance variable (or attribute) is the self.pixels in the def __init__ (self).
+> 
+> The reason why to the difference between the two is that the RGB values are defined outside any "def" so that they can be used
+> across the entire class, while the instance variable is what constructs the image by using the RGB values that are already
+> defined outside of it.
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
-   >
+   >In the happy.py file the constructor (or initializer) is the def __init__ (self) on line 10. The general purpose of a
+   > constructor is to compile the code and 
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
@@ -181,9 +185,9 @@ python3 main.py
   Use the following table for your answers:
 
 | Class Name | Super or Sub? | Direct parent(s) |
-| ---------- | ------------- | ---------------- |
-| NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+|-------| ------------- | ---------------- |
+| NotReal | Sub           | NotRealParent    |
+| ...   |   ...         |      ...         |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
