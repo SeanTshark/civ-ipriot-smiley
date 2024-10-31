@@ -147,12 +147,16 @@ python3 main.py
 > The reason why to the difference between the two is that the RGB values are defined outside any "def" so that they can be used
 > across the entire class, while the instance variable is what constructs the image by using the RGB values that are already
 > defined outside of it.
+> 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   >In the happy.py file the constructor (or initializer) is the def __init__ (self) on line 10. The general purpose of a
-   > constructor is to compile the code and 
+   >In the happy.py file, the constructor (or initializer) for the Happy class, is the def __init__ (self) on line 10. The general purpose of a
+   > constructor is to call the attributes that are within it and automatically call them when an instance of the class is created.
+   > 
+   > The purpose of the constructor in the Happy class is to get the necessary 
+   > 
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
@@ -185,9 +189,12 @@ python3 main.py
   Use the following table for your answers:
 
 | Class Name | Super or Sub? | Direct parent(s) |
-|-------| ------------- | ---------------- |
-| NotReal | Sub           | NotRealParent    |
-| ...   |   ...         |      ...         |
+|------------|---------------|------------------|
+| NotReal    | Sub           | NotRealParent    |
+| Smiley     | Super         | -                |
+| Happy      | Sub           | smiley <br/>blinkable |
+| Sad        | Sub           | smiley           |
+| Blinkable  | Super         | -                |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
@@ -204,22 +211,33 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > The key difference between the two classes is the role that the actual class plays in that
+   > the Happy class is meant to portray a smiling face and the Sad is meant to portray a frowning face.
+   > 
+   > The Happy class also utilises the 'Blinkable' class which allows it to blink while the Smiley class
+   > doesn't use it.
    >
 2. What are the key similarities?
-   > Your answer here
+   > The key similarities between the two classes, is that they both have draw_mouth and draw_eyes
+   > functions but with different variables assigned to them so that they can render 
+   > the right image.
+   > 
+   > They both use the Smiley class and the 'pixels', 'YELLOW', 'BLANK' attributes from said class.
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > A difference that stands out to me, is the Happy class's ability to blink which makes it more expressive and alive
+   > compared to the Sad class, which remains static and only displays sad face.
    >
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > Happy class's ability makes it more engaging to the user because of the blinking that makes it seem more expressive
+   > in displaying the emotion of joy and happiness compared to the Sad class which remains static and only function is 
+   > to display the frowning face, that can make the feeling more robotic. 
    >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
+   > The Smiley class utilizes the functionality of the SenseHat class
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
