@@ -155,12 +155,16 @@ python3 main.py
    >In the happy.py file, the constructor (or initializer) for the Happy class, is the def __init__ (self) on line 10. The general purpose of a
    > constructor is to call the attributes that are within it and automatically call them when an instance of the class is created.
    > 
-   > The purpose of the constructor in the Happy class is to get the necessary 
+   > The purpose of the constructor in the Happy class is to get the information from 
+   > the Smiley and Blinkable parent classes and the internal classes, which are draw_mouth and draw_eyes.
+   > Then complies them together to be called in the main.py file.
+   > 
    > 
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
+   > It executes the __init__ statements from the parent classes, which are from the super and then executes the draw_mouth
+   > and draw_eyes statements. All of this results in the creation a smiling face that can blink.
    >
 
 ### Code style
