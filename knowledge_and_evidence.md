@@ -171,17 +171,25 @@ python3 main.py
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> Your answer here
+> The code style that is being used is PEP8 because it uses the same indentation space, which is usually 4 this can be seen throughout all
+> the code and follows the same naming conventions when it comes to methods and classes, methods like draw_mouth or draw_eyes use snake_case naming. 
+> It is when methods are all lowercase and spaces are replaced with a "_".
+> 
+> Classes use PascalCase like Sad or Happy, where each word is started with a capital letter and there are no spaces. 
+> Docstring is also used in which is used to document stuff this can be found in the sad.py and happy.py files.
 >
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
->
-
+> The three aspects of PEP8 that I see applied are the indentation, use of naming conventions and the use of Docstring 
+>1. Indentation with four spaces for every indentation level can be seen throughout all the code like for example, in happy.py on line 16 draw_mouth method, everything assigned to the method has been indented 4 spaces.
+>2. Naming Conventions such as the use of PascalCase and snake_case, I can see PascalCase being used to name the classes and snake_case being used to name the methods.
+>3. Docstring is used to explain what the code does and I can see an example of this being used in the happy.py file where it explains what the file does and what some of the methods do like draw_mouth. 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
+> Two examples of organizational documentation in the code 
+> 1. Docstring being used to explain the purpose of the class like what is in happy.py, explaining that Happy is meant to display a happy face.
+> 2. Docstring being used to explain the purpose of a method, draw_mouth and draw_eyes have Docstring attached to them explaining what they do and in the case of draw_eyes it explains the purpose of the parameter.
 >
 
 ### Identifying and understanding classes
