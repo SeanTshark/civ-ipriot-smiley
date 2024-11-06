@@ -210,12 +210,16 @@ python3 main.py
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
+> The concept of abstraction is hiding details of the code and showing the important parts of the code the is essential to the code. 
+> An example of abstraction being used is in the Smiley class where it imports the code of SenseHAT but doesn't actually show it and only using the 
+> code to make the LED canvas and what colour the LEDS are going to be.
 >
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
+> The name of the process of deriving from base classes is called inheritance, and it's where classes can use other classes.
+> Its purpose in this project is in the use of the Smiley class that is used by the Happy and Sad classes so that they can serve
+> their there functions like Happy showing a smiling face. 
 >
 
 ### Compare and contrast classes
@@ -249,13 +253,21 @@ Compare and contrast the classes Happy and Sad.
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > The Smiley class utilizes the functionality of the SenseHat class
+   > The Smiley class utilizes the functionality of the SenseHat class while Happy and Sad classes utilize it through the importation of the Smiley class.
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > The Smiley class directly interacts with the SenseHat functionality with it using like the dim_display and show methods.
    >
-3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
+   >    The SenseHAT class is hidden because of its use overall regarding to the code as it used to prepare the setting for
+   >    the code like displaying the LED box and organising the window to match to an actual SenseHAT.
+   > 
+   >    The SenseHAT is imported into the Smiley class and organised their so for instance instead of Happy accessing
+   >    the SenseHat is imports the Smiley class instead because the information in the SenseHat in not important to the overall code,
+   >    so the Smiley class processes the SenseHats code into a more refined class that the other class can use instead.
+   > 
+   >    In short, SenseHat has the code that isn't overall important to the other classes, so it is hidden and imported into the Smiley class,
+   >    so that the other classes can use Smiley instead without needing to know the code in SenseHat.
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -266,22 +278,26 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> If we compare the Sad and Happy classes, the Sad class can't blink because of not having the implementation of a blink
+> method while the Happy class can. The code author appears to believe that certain classes should be able to blink instead of it
+> being a universal function.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
+> The code author most likely expects them to blink in the same way as to remain a theme across the smileys that can blink
+> instead of showing a difference between them.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
+> Polymorphism is essentially something that has the same name but can have different forms to it.
 >
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> The blink method comes from the Blinkable class and is being used by the Happy class, while in Blinkable the blink method doesn't have any information
+> tied to it while in the Happy class it does but both have the same name.
 >
 1. **Implement Blink in Sad Class:**
 
