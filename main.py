@@ -6,6 +6,7 @@ import time
 
 from happy import Happy
 
+
 def main():
     smiley = Happy()
 
@@ -14,6 +15,7 @@ def main():
     time.sleep(1)
 
     smiley.blink()
+
 
 if __name__ == '__main__':
     ############################################################

@@ -156,14 +156,14 @@ python3 main.py
    > constructor is to call the attributes that are within it and automatically call them when an instance of the class is created.
    > 
    > The purpose of the constructor in the Happy class is to get the information from 
-   > the Smiley and Blinkable parent classes and the internal classes, which are draw_mouth and draw_eyes.
+   > the Smiley and Blinkable parent classes and the internal methods, which are draw_mouth and draw_eyes.
    > Then complies them together to be called in the main.py file.
    > 
    > 
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > It executes the __init__ statements from the parent classes, which are from the super and then executes the draw_mouth
+   > It executes the __init__ statements from the parent classes, which is from the super and then executes the draw_mouth
    > and draw_eyes statements. All of this results in the creation a smiling face that can blink.
    >
 
@@ -279,14 +279,14 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > If we compare the Sad and Happy classes, the Sad class can't blink because of not having the implementation of a blink
-> method while the Happy class can. The code author appears to believe that certain classes should be able to blink instead of it
-> being a universal function.
+> method while the Happy class does but the Sad class does have the code in the draw_eyes method to blink with the wide_open bool statement. 
+> The code author appears to believe that all smileys should be able to blink but only certain classes can blink.
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> The code author most likely expects them to blink in the same way as to remain a theme across the smileys that can blink
-> instead of showing a difference between them.
+> The code author doesn't except them to blink in the same way has to portray the emotion of the program like the Happy class having a blink that makes 
+> it look like it is happy while if the Sad class had the blink method it might be slower to make it seem more like it's sad.
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
@@ -316,11 +316,12 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](assessmentscreenshots/screenshot2.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > While running the code, since it followed the same blink delay as Happy, it didn't make the Sad face look sad, so I adjusted the
+  > delay from 0.25 to 1 second to portray the emotion of sadness better.
 
   ### If It Walks Like a Duck…
 
@@ -328,23 +329,25 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
-     > Your answer here
+     > Blinkable is an abstract base class 
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > The generic term the describes is called an abstract class, this is where Blinkable has the blink name but Happy and Sad classes have to implement the function of blink.
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > My answer represents Polymorphism since the blink method comes from Blinkable, but it passes the blink method in it so that it becomes null. 
+  > So when Happy and Sad classes make the blink method it can have the same but each blink method can have different code tied to it.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > Cause since the blink method in Blinkable is passed into a null the blink method name can have any code typed in it without having it to relate to Blinkable.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > The capability is called duck typing, and it is feasible in Python and many other dynamically typed languages because Python doesn't care what type, it only cares if the method exists or not.
+  > While in C# and other statically typed languages it must be called with the specific type in mind.  
 
   ***
 
@@ -357,19 +360,19 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > Colors are defined in the Smiley class
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > The color variables are held in tuples using ints to get the appropriate RGB values. They are not expected to change during the program's execution.
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > The color variables are being used in Happy, Smiley and Sad classes. 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > The easiest way to change the smileys to green is to change the value of the "Y" variable (line 16) of the smiley class and give it the appropriate name and values like change "Y" to "G" then replacing all the "Y" in the self.pixels to "G".
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
