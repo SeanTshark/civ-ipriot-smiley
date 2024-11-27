@@ -124,11 +124,11 @@ python3 main.py
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File      | First line | Line range |
-   | ------------ |-----------|-----|------------|
-   |  sequence    | smiley.py |  def __init__(self):    | 15-26      |
-   |  selection   | sad.py    | def draw_eyes(self, wide_open=True):    | 24-30      |
-   |  iteration   | happy.py  | def draw_mouth(self):    | 20-22      |
+   | Control Flow | File      | First line          | Line range |
+   | ------------ |-----------|---------------------|------------|
+   |  sequence    | smiley.py | self.sense_hat = SenseHat() | 14-29      |
+   |  selection   | sad.py    | if wide_open:       | 28-32      |
+   |  iteration   | happy.py  | for pixel in mouth  | 21-22      |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
@@ -184,7 +184,7 @@ python3 main.py
 > The three aspects of PEP8 that I see applied are the indentation, use of naming conventions and the use of Docstring 
 >1. Indentation with four spaces for every indentation level can be seen throughout all the code like for example, in happy.py on line 16 draw_mouth method, everything assigned to the method has been indented 4 spaces.
 >2. Naming Conventions such as the use of PascalCase and snake_case, I can see PascalCase being used to name the classes and snake_case being used to name the methods.
->3. Docstring is used to explain what the code does and I can see an example of this being used in the happy.py file where it explains what the file does and what some of the methods do like draw_mouth. 
+>3. The use the of a blank line to separate functions and methods from each other, I can see this throughout the entire code for example in smiley.py between "dim_display" and "show" methods, there is a single blank line and if you remove it you'll get notified of the error. 
 3. Give two examples of organizational documentation in the code.
 
 > Two examples of organizational documentation in the code 
@@ -333,16 +333,16 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > The generic term the describes is called an abstract class, this is where Blinkable has the blink name but Happy and Sad classes have to implement the function of blink.
-
+  > While 'Blinkable' has an "ABC" (Abstract Base Class) assigned to it, it does not properly behave like an abstract class but instead more like an interface.
+  > This is because if the lack of concrete methods that normal abstract class would have while an interface only defines method signatures, this is what the 'Blinkable' class has with the "blink" method, since it doesn't have any code to it, it is just a "placeholder" of sorts.
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > My answer represents Polymorphism since the blink method comes from Blinkable, but it passes the blink method in it so that it becomes null. 
-  > So when Happy and Sad classes make the blink method it can have the same but each blink method can have different code tied to it.
-
+  > My answer represents Polymorphism because the "blink" method in Blinkable has no code to it simply just passing itself making it a method signature, this means that for example the Happy or Sad class, where they implement the "blink" method in themselves and can use it but both of them can make it serve different purposes while using the same name. 
+  >
+  >The Happy class will make it the blink method appear like how someone would blink when there "happy" and the same for the Sad class, essentially "blink" can have different behaviours (code) tied to it but the same name is used regardless of what class is using it.
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Cause since the blink method in Blinkable is passed into a null the blink method name can have any code typed in it without having it to relate to Blinkable.
+  > Because the name "blink" isn't inherently tied to the 'Blinkable' class, so if you don't call the 'Blinkable' class then you can freely use "blink" and assign the same code as the one in the Happy class without any restriction.
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
@@ -415,7 +415,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Adjust the `Sad` class initialization:** In the `Sad` class's initializer method, change the superclass call to include the `complexion` argument with the value `self.BLUE`, as shown:
 
      ```python
-     super().__init__(complexion=self.BLUE)
+    super().__init__(complexion=self.BLUE)
      ```
 
   2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.

@@ -2,21 +2,21 @@ import time
 from smiley import Smiley
 from blinkable import Blinkable
 
+
 class Angry(Smiley, Blinkable):
     def __init__(self):
         super().__init__(complexion=self.RED)
-
 
         self.draw_mouth()
         self.draw_eyes()
         self.draw_eyebrows()
 
-
     def draw_eyebrows(self):
 
-        eyebrow = [2,11,5,12]
+        eyebrow = [2, 11, 5, 12]
         for pixel in eyebrow:
             self.pixels[pixel] = self.BLANK
+
     def draw_mouth(self):
 
         mouth = [49, 54, 42, 43, 44, 45]
@@ -40,10 +40,3 @@ class Angry(Smiley, Blinkable):
         time.sleep(delay)
         self.draw_eyes(wide_open=True)
         self.show()
-
-
-
-
-
-
-

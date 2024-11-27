@@ -4,6 +4,7 @@ from blinkable import Blinkable
 
 
 class Sad(Smiley, Blinkable):
+
     def __init__(self):
         super().__init__(complexion=self.BLUE)
 
